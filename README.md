@@ -12,7 +12,7 @@ The *cleanliness* gem provides two functions:
 
 To automatically clean a field in your rails application, you can use the clean validator:
 
-    validates :username, presence: true, *cleanliness: true*
+    validates :username, presence: true, cleanliness: true
 
 ## Installation
 
