@@ -11,6 +11,7 @@ module Cleanliness
       replace ={}
       rgx = Regexp.new "#{@dictionary.keys.map{|k| "(#{k})"}.join("|")}", Regexp::IGNORECASE
       scan_matches = string.scan(rgx).flatten.reject!(&:blank?)
+      return string if scan_matches.nil?
       scan_matches.each{|k|
         replace[k] = (k =~ /^[A-Z]{1}/).nil? ? @dictionary[k.downcase] : @dictionary[k.downcase].capitalize
       }
